@@ -33,6 +33,7 @@ class Net(nn.Module):
         x = self.input(x)
         x = self.sigmoid(x)
         x = self.h1(x)
+
         x = self.output(x)
         return x
 
@@ -49,7 +50,7 @@ optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
 
 # Training
 
-for epoch in range(1500):
+for epoch in range(6000):
     output = model(x)
     loss = criterion(output, y)
     print(loss)
